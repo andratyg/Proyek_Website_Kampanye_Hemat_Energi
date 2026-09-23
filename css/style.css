@@ -738,6 +738,7 @@ img, svg {
   margin-bottom: 1.5rem;
 }
 
+.identity-header h2,
 .identity-header h3 {
   font-family: var(--font-display);
   font-size: 1.35rem;
@@ -761,6 +762,7 @@ img, svg {
   gap: 1.75rem;
 }
 
+.identity-col h3,
 .identity-col h4 {
   font-family: var(--font-display);
   font-size: 0.8rem;
@@ -796,7 +798,11 @@ img, svg {
 }
 
 .about-hero-inner {
-  max-width: 760px;
+  max-width: 660px;
+}
+
+.about-hero .hero-desc {
+  max-width: 62ch;
 }
 
 .about-story {
@@ -804,13 +810,22 @@ img, svg {
 }
 
 .story-container {
-  max-width: 780px;
+  max-width: 660px;
   margin: 0 auto;
+}
+
+.story-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  letter-spacing: -0.03em;
+  color: var(--color-forest);
+  line-height: 1.25;
+  margin-bottom: 1.75rem;
 }
 
 .story-lead {
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   line-height: 1.45;
   color: var(--color-forest);
   font-weight: 500;
@@ -818,6 +833,7 @@ img, svg {
   margin-bottom: 2.25rem;
   border-left: 3px solid var(--color-amber);
   padding-left: 1.25rem;
+  max-width: 62ch;
 }
 
 .story-body {
@@ -829,6 +845,7 @@ img, svg {
 .story-body p {
   margin-bottom: 1.6rem;
   color: var(--color-ink);
+  max-width: 62ch;
 }
 
 .story-highlight-quote {

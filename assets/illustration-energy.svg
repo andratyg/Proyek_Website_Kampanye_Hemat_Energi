@@ -16,7 +16,7 @@
     <!-- Aluminum base deck gradients -->
     <linearGradient id="deckSurface" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="40%" stop-color="#f8f6f0" />
+      <stop offset="35%" stop-color="#f8f6f0" />
       <stop offset="100%" stop-color="#eae4d4" />
     </linearGradient>
 
@@ -24,6 +24,47 @@
       <stop offset="0%" stop-color="#c9c2b1" />
       <stop offset="50%" stop-color="#ded8cb" />
       <stop offset="100%" stop-color="#b8b09d" />
+    </linearGradient>
+
+    <!-- Keyboard Well Recess Gradients -->
+    <linearGradient id="wellGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e1b13" />
+      <stop offset="8%" stop-color="#152b1e" />
+      <stop offset="92%" stop-color="#162e20" />
+      <stop offset="100%" stop-color="#0b160f" />
+    </linearGradient>
+
+    <!-- Keycap Surface Gradients (3D Chiclet Texture) -->
+    <linearGradient id="keySurfaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#284835" />
+      <stop offset="35%" stop-color="#1b3224" />
+      <stop offset="100%" stop-color="#13241a" />
+    </linearGradient>
+
+    <linearGradient id="keySurfaceHover" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#325942" />
+      <stop offset="100%" stop-color="#1a3525" />
+    </linearGradient>
+
+    <!-- Amber Accent Spacebar Gradient -->
+    <linearGradient id="spacebarGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5a623" />
+      <stop offset="25%" stop-color="#e58b16" />
+      <stop offset="100%" stop-color="#a85c07" />
+    </linearGradient>
+
+    <!-- Frosted Glass Trackpad Gradient -->
+    <linearGradient id="trackpadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#f5f2e9" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#eae3d3" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Screen Glass Sheen (Diagonal Gloss Sweep) -->
+    <linearGradient id="screenSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12" />
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.04" />
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.0" />
     </linearGradient>
 
     <!-- Amber filament switch glow -->
@@ -44,6 +85,11 @@
     <filter id="noteShadow" x="-15%" y="-15%" width="130%" height="135%" filterUnits="userSpaceOnUse">
       <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#183324" flood-opacity="0.09" />
     </filter>
+
+    <!-- Keycap Micro Shadow -->
+    <filter id="keyShadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="0.8" stdDeviation="0.6" flood-color="#08100b" flood-opacity="0.6" />
+    </filter>
   </defs>
 
   <!-- ================= CANVAS BACKGROUND & ROOM ================= -->
@@ -54,80 +100,62 @@
   <line x1="30" y1="210" x2="570" y2="210" stroke="#e8e2d5" stroke-width="1.2" stroke-dasharray="6 6" />
 
   <!-- ================= DESK SURFACE (TABLETOP) ================= -->
-  <!-- Top surface of desk in perspective -->
   <path d="M 20 280 L 580 280 L 545 455 L 55 455 Z" fill="#efe8db" />
   <line x1="20" y1="280" x2="580" y2="280" stroke="#183324" stroke-width="2.5" />
-  <!-- Front wooden table edge -->
   <path d="M 55 455 L 545 455 L 545 466 L 55 466 Z" fill="#ded4c3" />
 
-  <!-- ================= STOPKONTAK TEMBOK & COLOKAN (BAGUS & REALISTIS) ================= -->
-  <!-- Stopkontak Dinding Ganda SNI (Mounted on Wall at Upper Right) -->
+  <!-- ================= STOPKONTAK TEMBOK & COLOKAN ================= -->
   <g transform="translate(440, 48)" filter="url(#socketShadow)">
-    <!-- Base Mounting Box / Wall Plate -->
     <rect x="0" y="0" width="132" height="88" rx="10" fill="#ffffff" stroke="#ded7c7" stroke-width="2" />
-    <!-- Beveled Plate Inner Border -->
     <rect x="3.5" y="3.5" width="125" height="81" rx="7" fill="none" stroke="#f4efe6" stroke-width="1.5" />
     
-    <!-- Plate Top Label -->
     <text x="14" y="15" fill="#8c9a90" font-family="'Space Grotesk', sans-serif" font-size="6.5" font-weight="700" letter-spacing="0.08em">STOPKONTAK DINDING 220V</text>
 
-    <!-- LEFT COMPARTMENT: OUTLET DENGAN COLOKAN / STEKER CHARGER TERTANCAP SEMPURNA -->
+    <!-- LEFT COMPARTMENT: OUTLET DENGAN COLOKAN CHARGER TERTANCAP -->
     <g transform="translate(10, 20)">
-      <!-- Recessed Socket Cavity in Wall Plate -->
       <circle cx="27" cy="27" r="22" fill="#f4efe6" stroke="#d5cebe" stroke-width="1.5" />
       <circle cx="27" cy="27" r="19" fill="#eae3d3" />
-      <!-- Earth Ground Metal Clips (Top & Bottom) -->
       <rect x="25" y="6" width="4" height="4" rx="1" fill="#c87d1a" />
       <rect x="25" y="44" width="4" height="4" rx="1" fill="#c87d1a" />
 
-      <!-- STEKER CHARGER LAPTOP (BULAT DENGAN GRIP & KABEL KELUAR) TERTANCAP RAPI -->
+      <!-- STEKER CHARGER TERTANCAP RAPI -->
       <g filter="url(#socketShadow)">
-        <!-- Steker Outer Collar / Grip -->
         <circle cx="27" cy="27" r="16.5" fill="#183324" stroke="#0e1f16" stroke-width="1.5" />
-        <!-- Steker Front Bevel Face -->
         <circle cx="27" cy="27" r="13" fill="#244935" />
-        <!-- Ergonomic Finger Grip Ridges on Plug Body -->
         <line x1="20" y1="23" x2="34" y2="23" stroke="#356149" stroke-width="1.5" stroke-linecap="round" />
         <line x1="20" y1="27" x2="34" y2="27" stroke="#356149" stroke-width="1.5" stroke-linecap="round" />
         <line x1="20" y1="31" x2="34" y2="31" stroke="#356149" stroke-width="1.5" stroke-linecap="round" />
         
-        <!-- Center Cable Relief Rubber Boot (Keluar ke bawah) -->
         <rect x="23" y="38" width="8" height="9" rx="2.5" fill="#161d18" />
         <rect x="24.5" y="44" width="5" height="5" rx="1.5" fill="#2c3530" />
       </g>
     </g>
 
-    <!-- RIGHT COMPARTMENT: SAKELAR DINDING ON/OFF BERLAMPU AMBER -->
+    <!-- RIGHT COMPARTMENT: SAKELAR DINDING ON/OFF -->
     <g transform="translate(76, 20)">
       <rect x="4" y="6" width="42" height="42" rx="6" fill="#f4efe6" stroke="#d5cebe" stroke-width="1.2" />
-      <!-- Rocker Switch Border -->
       <rect x="8" y="10" width="34" height="34" rx="4" fill="#183324" />
-      <!-- Rocker Switch Top Face (Illuminated Amber when ON) -->
       <rect x="11" y="13" width="28" height="15" rx="2" fill="url(#amberGlow)" />
       <circle cx="25" cy="20.5" r="2.2" fill="#ffffff" />
-      <text x="14" y="38" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="7" font-weight="700">SAKELAR</text>
+      <text x="25" y="38" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="5.5" font-weight="700" text-anchor="middle" letter-spacing="0.05em">SAKELAR</text>
     </g>
 
-    <!-- Status Tag below Socket -->
     <rect x="12" y="76" width="108" height="3" rx="1.5" fill="#e6decb" />
   </g>
 
   <!-- ================= KABEL CHARGER DARI TEMBOK KE LAPTOP ================= -->
-  <!-- Kabel tebal elastis dari steker (477, 106), melengkung anggun ke meja, masuk ke port charger laptop (380, 276) -->
   <path d="M 477 106 C 477 150, 485 210, 465 255 C 445 295, 410 270, 385 276" 
         stroke="#161d18" stroke-width="3.5" stroke-linecap="round" fill="none" />
-  <!-- Bayangan kabel di atas meja -->
   <path d="M 465 290 C 445 305, 410 276, 385 279" 
         stroke="#183324" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.12" />
 
-  <!-- ================= LAPTOP TEGAK & PROPORSIONAL (TIDAK TERLALU MIRING) ================= -->
+  <!-- ================= LAPTOP TEGAK & REALISTIS DENGAN KEYBOARD 3D ================= -->
   <g filter="url(#deskShadow)">
     
     <!-- 1. Contact Shadow di Bawah Bodi Laptop -->
-    <ellipse cx="230" cy="398" rx="175" ry="18" fill="#183324" opacity="0.22" />
+    <ellipse cx="230" cy="398" rx="178" ry="19" fill="#183324" opacity="0.24" />
 
-    <!-- 2. LAYAR LAPTOP TEGAK MENGHADAP DEPAN (ERSIH, TEGAK, MUDAH DIBACA) -->
-    <!-- Sudut bukaan natural ~105°, tampak depan tegak, hanya sedikit trapesium halus -->
+    <!-- 2. LAYAR LAPTOP TEGAK MENGHADAP DEPAN -->
     <!-- Bingkai Luar Layar (Lid Frame) -->
     <path d="M 94 62 L 366 62 L 372 255 L 88 255 Z" fill="url(#lidBevel)" stroke="#102218" stroke-width="2" rx="6" />
     
@@ -137,14 +165,18 @@
     <!-- Kaca Layar Aktif (Screen Glass) -->
     <path d="M 104 74 L 356 74 L 362 242 L 98 242 Z" fill="url(#laptopScreenGrad)" />
 
+    <!-- Screen Gloss Sweep (Pantulan Cahaya Kaca Layar) -->
+    <path d="M 104 74 L 230 74 L 140 242 L 98 242 Z" fill="url(#screenSheen)" />
+
     <!-- Webcam Notch & Indikator Kamera (Tengah Atas Bezel) -->
-    <circle cx="230" cy="69" r="2.2" fill="#4e6255" />
-    <circle cx="230" cy="69" r="0.9" fill="#0a120e" />
-    <circle cx="233.5" cy="69" r="0.6" fill="#4ade80" />
+    <rect x="220" y="66.5" width="20" height="5" rx="2.5" fill="#070c09" />
+    <circle cx="230" cy="69" r="2.2" fill="#2d3d33" />
+    <circle cx="230" cy="69" r="1.1" fill="#080f0b" />
+    <circle cx="235" cy="69" r="0.8" fill="#4ade80" />
 
     <!-- KONTEN TERMINAL / KODE DI LAYAR LAPTOP -->
     <!-- Window Bar Terminal -->
-    <rect x="107" y="78" width="246" height="18" rx="3" fill="#0a160f" opacity="0.85" />
+    <rect x="107" y="78" width="246" height="18" rx="3" fill="#0a160f" opacity="0.9" />
     <circle cx="117" cy="87" r="3" fill="#e57373" />
     <circle cx="126" cy="87" r="3" fill="#ffb74d" />
     <circle cx="135" cy="87" r="3" fill="#81c784" />
@@ -157,7 +189,7 @@
     <text x="110" y="161" fill="#81c784" font-family="monospace" font-size="9">> sekolah: SMK Adiwiyata (tanpa AC)</text>
     
     <!-- Highlight Callout Box inside screen -->
-    <rect x="110" y="174" width="240" height="28" rx="3" fill="#183324" stroke="#c87d1a" stroke-width="1" />
+    <rect x="110" y="174" width="240" height="28" rx="3" fill="#183324" stroke="#c87d1a" stroke-width="1.2" />
     <text x="116" y="186" fill="#fcf4e8" font-family="'Space Grotesk', sans-serif" font-size="7.5" font-weight="700">⚡ PERINGATAN SADAR WATT:</text>
     <text x="116" y="196" fill="#f5a623" font-family="monospace" font-size="7.5">Jangan cuma sleep! Cabut charger dari tembok!</text>
 
@@ -167,44 +199,409 @@
     <rect x="110" y="226" width="70" height="4" fill="#2d583f" rx="1" />
 
     <!-- 3. ENGSEL SILINDRIS LAPTOP (HINGE BAR) -->
-    <!-- Menghubungkan layar tegak langsung ke bodi bawah keyboard -->
-    <rect x="120" y="252" width="220" height="8" rx="4" fill="#1c3024" stroke="#0e1812" stroke-width="1.5" />
-    <line x1="130" y1="256" x2="330" y2="256" stroke="#486e56" stroke-width="1" />
+    <rect x="118" y="252" width="224" height="8" rx="4" fill="#182c20" stroke="#0b140e" stroke-width="1.5" />
+    <line x1="126" y1="256" x2="334" y2="256" stroke="#486e56" stroke-width="1" />
 
-    <!-- 4. BODI BAWAH LAPTOP / KEYBOARD DECK (SLOPING FORWARD TO DESK) -->
+    <!-- 4. BODI BAWAH LAPTOP / KEYBOARD DECK -->
     <!-- Permukaan Atas Deck (Unibody Silver-Cream Aluminum) -->
-    <path d="M 80 258 L 380 258 L 406 382 L 54 382 Z" fill="url(#deckSurface)" stroke="#d5cebe" stroke-width="1.5" />
+    <path d="M 80 258 L 380 258 L 406 384 L 54 384 Z" fill="url(#deckSurface)" stroke="#d5cebe" stroke-width="1.5" />
 
     <!-- Ketebalan Sisi & Depan Laptop (Front Edge Thickness) -->
-    <path d="M 54 382 L 406 382 L 404 394 L 56 394 Z" fill="url(#deckFrontLip)" stroke="#c2baa7" stroke-width="1" />
+    <path d="M 54 384 L 406 384 L 404 395 L 56 395 Z" fill="url(#deckFrontLip)" stroke="#c2baa7" stroke-width="1" />
+    <!-- Chamfer Edge Highlight (Garis Mengkilap Bibir Depan) -->
+    <line x1="56" y1="384.5" x2="404" y2="384.5" stroke="#ffffff" stroke-width="1" opacity="0.9" />
     <!-- Coakan Pembuka Layar di Bibir Depan (Thumb Notch) -->
-    <rect x="210" y="382" width="40" height="3" rx="1.5" fill="#a49c89" />
+    <rect x="210" y="384" width="40" height="3" rx="1.5" fill="#a49c89" />
 
-    <!-- 5. KEYBOARD WELL (LEKUKAN KEYBOARD LAPTOP TERINTEGRASI) -->
-    <path d="M 98 266 L 362 266 L 350 328 L 110 328 Z" fill="#213d2c" rx="3" />
+    <!-- ================= 5. KEYBOARD WELL (LEKUKAN KEYBOARD 3D) ================= -->
+    <!-- Well Basin (Cekungan Presisi dengan Bayangan Dalam) -->
+    <path d="M 102 264.5 L 358 264.5 L 366 333 L 94 333 Z" fill="url(#wellGrad)" stroke="#13261b" stroke-width="1.2" />
+    
+    <!-- Ambient Backlight Glow Lembut di Bawah Tuts -->
+    <path d="M 104 266 L 356 266 L 364 331 L 96 331 Z" fill="#2d5e3f" opacity="0.22" />
 
-    <!-- Baris Tombol Keyboard Chiclet Laptop -->
-    <!-- Function keys row -->
-    <line x1="106" y1="273" x2="354" y2="273" stroke="#3b634a" stroke-width="2" stroke-dasharray="6 3" />
-    <!-- Number keys row -->
-    <line x1="108" y1="283" x2="352" y2="283" stroke="#ffffff" stroke-width="2.2" stroke-dasharray="8 3" />
-    <!-- QWERTY row -->
-    <line x1="110" y1="293" x2="350" y2="293" stroke="#ffffff" stroke-width="2.2" stroke-dasharray="9 3" />
-    <!-- ASDF row -->
-    <line x1="112" y1="303" x2="348" y2="303" stroke="#ffffff" stroke-width="2.2" stroke-dasharray="9 3" />
-    <!-- Spacebar row (Amber accent on Spacebar) -->
-    <line x1="115" y1="314" x2="160" y2="314" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="7 3" />
-    <line x1="170" y1="314" x2="290" y2="314" stroke="#f5a623" stroke-width="3" stroke-linecap="round" />
-    <line x1="300" y1="314" x2="342" y2="314" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="7 3" />
+    <!-- ================= SUSUNAN TUTS KEYBOARD CHICLET REALISTIS ================= -->
+    <g id="laptopChicletKeys">
+      
+      <!-- - ROW 0: FUNCTION ROW (y: 266.5, h: 7) - -->
+      <!-- Esc Key -->
+      <g filter="url(#keyShadow)">
+        <rect x="105" y="266.5" width="14" height="7" rx="1.5" fill="#0d1b13" />
+        <rect x="105" y="266.5" width="14" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#315c41" stroke-width="0.5" />
+        <text x="108" y="271.5" fill="#d2dec5" font-family="system-ui, sans-serif" font-size="4.2" font-weight="700">ESC</text>
+      </g>
 
-    <!-- 6. TRACKPAD LAPTOP TERINTEGRASI (CENTERED GLASS TRACKPAD) -->
-    <rect x="185" y="336" width="90" height="36" rx="4" fill="#ffffff" stroke="#d5cebe" stroke-width="1.2" />
-    <line x1="230" y1="360" x2="230" y2="370" stroke="#ded8cb" stroke-width="1" />
+      <!-- F1 - F4 Cluster -->
+      <g>
+        <rect x="122.5" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="125" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.8">F1</text>
+        <rect x="135.5" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="138" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.8">F2</text>
+        <rect x="148.5" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="151" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.8">F3</text>
+        <rect x="161.5" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="164" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.8">F4</text>
+      </g>
+
+      <!-- F5 - F8 Cluster -->
+      <g>
+        <rect x="176" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="178.5" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.8">F5</text>
+        <rect x="189" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="191.5" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.8">F6</text>
+        <rect x="202" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="204.5" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.8">F7</text>
+        <rect x="215" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="217.5" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.8">F8</text>
+      </g>
+
+      <!-- F9 - F12 Cluster -->
+      <g>
+        <rect x="229.5" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="232" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.8">F9</text>
+        <rect x="242.5" y="266.5" width="11.5" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="244.5" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.6">F10</text>
+        <rect x="256" y="266.5" width="11.5" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="258" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.6">F11</text>
+        <rect x="269.5" y="266.5" width="11.5" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="271.5" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.6">F12</text>
+      </g>
+
+      <!-- Utility / Ins / Del -->
+      <g>
+        <rect x="284.5" y="266.5" width="10.5" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="286.5" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.5">PRT</text>
+        <rect x="297" y="266.5" width="10.5" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="299" y="271.2" fill="#8ca595" font-family="system-ui, sans-serif" font-size="3.5">INS</text>
+        <rect x="309.5" y="266.5" width="11" height="6.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="311.5" y="271.2" fill="#d2dec5" font-family="system-ui, sans-serif" font-size="3.5">DEL</text>
+      </g>
+
+      <!-- Power Button dengan Indikator LED -->
+      <g filter="url(#keyShadow)">
+        <rect x="324" y="266.5" width="31" height="7" rx="1.5" fill="#0d1b13" />
+        <rect x="324" y="266.5" width="31" height="6.2" rx="1.2" fill="#1b3224" stroke="#c87d1a" stroke-width="0.8" />
+        <!-- Ikon Power ⏻ -->
+        <circle cx="334" cy="269.6" r="2.2" fill="none" stroke="#f5a623" stroke-width="0.8" stroke-dasharray="8 3" />
+        <line x1="334" y1="267.8" x2="334" y2="269.8" stroke="#f5a623" stroke-width="0.8" stroke-linecap="round" />
+        <text x="339" y="271.2" fill="#fcf4e8" font-family="system-ui, sans-serif" font-size="3.8" font-weight="700">POWER</text>
+        <!-- Power LED Dot -->
+        <circle cx="351.5" cy="269.6" r="1" fill="#4ade80" />
+      </g>
+
+      <!-- - ROW 1: NUMBERS ROW (y: 276.5, h: 8.5) - -->
+      <!-- Backtick ~ -->
+      <g>
+        <rect x="103" y="276.5" width="13" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="107.5" y="282.2" fill="#a4b7ab" font-family="monospace" font-size="4.8">~</text>
+      </g>
+      <!-- Numbers 1 to 0 & Symbols -->
+      <g font-family="'Outfit', system-ui, sans-serif" font-size="4.6" font-weight="600" fill="#ffffff" text-anchor="middle">
+        <!-- 1 -->
+        <rect x="118" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="124.7" y="282.3">1</text>
+        <!-- 2 -->
+        <rect x="133.5" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="140.2" y="282.3">2</text>
+        <!-- 3 -->
+        <rect x="149" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="155.7" y="282.3">3</text>
+        <!-- 4 -->
+        <rect x="164.5" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="171.2" y="282.3">4</text>
+        <!-- 5 -->
+        <rect x="180" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="186.7" y="282.3">5</text>
+        <!-- 6 -->
+        <rect x="195.5" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="202.2" y="282.3">6</text>
+        <!-- 7 -->
+        <rect x="211" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="217.7" y="282.3">7</text>
+        <!-- 8 -->
+        <rect x="226.5" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="233.2" y="282.3">8</text>
+        <!-- 9 -->
+        <rect x="242" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="248.7" y="282.3">9</text>
+        <!-- 0 -->
+        <rect x="257.5" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="264.2" y="282.3">0</text>
+        <!-- - -->
+        <rect x="273" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="279.7" y="282.3">-</text>
+        <!-- = -->
+        <rect x="288.5" y="276.5" width="13.5" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="295.2" y="282.3">=</text>
+      </g>
+      <!-- Backspace Key -->
+      <g filter="url(#keyShadow)">
+        <rect x="304" y="276.5" width="51" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#325942" stroke-width="0.6" />
+        <text x="323" y="282.3" fill="#d2dec5" font-family="'Outfit', system-ui, sans-serif" font-size="4.4" font-weight="700">BACKSPACE</text>
+        <!-- Ikon Backspace Arrow ⌫ -->
+        <path d="M 314 280.5 L 317 278.5 L 320 278.5 L 320 282.5 L 317 282.5 Z" fill="none" stroke="#d2dec5" stroke-width="0.6" />
+        <line x1="316.5" y1="279.5" x2="318.5" y2="281.5" stroke="#d2dec5" stroke-width="0.6" />
+        <line x1="318.5" y1="279.5" x2="316.5" y2="281.5" stroke="#d2dec5" stroke-width="0.6" />
+      </g>
+
+      <!-- - ROW 2: QWERTY ROW (y: 287.5, h: 8.5) - -->
+      <!-- Tab Key -->
+      <g filter="url(#keyShadow)">
+        <rect x="101" y="287.5" width="20" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#325942" stroke-width="0.6" />
+        <text x="105" y="293.3" fill="#d2dec5" font-family="'Outfit', system-ui, sans-serif" font-size="4.2" font-weight="700">TAB</text>
+        <path d="M 115 291 L 118 291 M 117 289.5 L 118.5 291 L 117 292.5" stroke="#8ca595" stroke-width="0.6" fill="none" />
+      </g>
+
+      <!-- Q - P & Brackets (Chiclet Keycaps dengan Relief 3D) -->
+      <g font-family="'Outfit', system-ui, sans-serif" font-size="4.8" font-weight="600" fill="#ffffff" text-anchor="middle">
+        <!-- Q -->
+        <rect x="123" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="130" y="293.4">Q</text>
+        <!-- W -->
+        <rect x="139" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="146" y="293.4">W</text>
+        <!-- E -->
+        <rect x="155" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="162" y="293.4">E</text>
+        <!-- R -->
+        <rect x="171" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="178" y="293.4">R</text>
+        <!-- T -->
+        <rect x="187" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="194" y="293.4">T</text>
+        <!-- Y -->
+        <rect x="203" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="210" y="293.4">Y</text>
+        <!-- U -->
+        <rect x="219" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="226" y="293.4">U</text>
+        <!-- I -->
+        <rect x="235" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="242" y="293.4">I</text>
+        <!-- O -->
+        <rect x="251" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="258" y="293.4">O</text>
+        <!-- P -->
+        <rect x="267" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="274" y="293.4">P</text>
+        <!-- [ -->
+        <rect x="283" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="290" y="293.4" fill="#a4b7ab">[</text>
+        <!-- ] -->
+        <rect x="299" y="287.5" width="14" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="306" y="293.4" fill="#a4b7ab">]</text>
+        <!-- \ & Enter Top Lip -->
+        <rect x="315" y="287.5" width="15" height="8" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="322.5" y="293.4" fill="#a4b7ab">\</text>
+        <!-- Return upper segment -->
+        <rect x="332" y="287.5" width="24" height="8" rx="1.5" fill="#1b3224" stroke="#2b4e38" stroke-width="0.5" />
+        <circle cx="344" cy="291.5" r="1" fill="#4ade80" opacity="0.6" />
+      </g>
+
+      <!-- - ROW 3: HOME / ASDF ROW (y: 298.5, h: 9) - -->
+      <!-- Caps Lock Key dengan LED Hijau -->
+      <g filter="url(#keyShadow)">
+        <rect x="99" y="298.5" width="24" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#325942" stroke-width="0.6" />
+        <text x="103" y="304.5" fill="#d2dec5" font-family="'Outfit', system-ui, sans-serif" font-size="4.2" font-weight="700">CAPS</text>
+        <!-- Caps Lock LED Indicator -->
+        <circle cx="119" cy="302.8" r="0.9" fill="#4ade80" />
+      </g>
+
+      <!-- ASDFGHJKL;' -->
+      <g font-family="'Outfit', system-ui, sans-serif" font-size="5" font-weight="600" fill="#ffffff" text-anchor="middle">
+        <!-- A -->
+        <rect x="125" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="132.2" y="304.8">A</text>
+        <!-- S -->
+        <rect x="141.5" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="148.7" y="304.8">S</text>
+        <!-- D -->
+        <rect x="158" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="165.2" y="304.8">D</text>
+        <!-- F (Dengan Haptic Tactile Bump Bar) -->
+        <rect x="174.5" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="181.7" y="304.8">F</text>
+        <line x1="179.5" y1="306" x2="184" y2="306" stroke="#4ade80" stroke-width="0.7" stroke-linecap="round" />
+        <!-- G -->
+        <rect x="191" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="198.2" y="304.8">G</text>
+        <!-- H -->
+        <rect x="207.5" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="214.7" y="304.8">H</text>
+        <!-- J (Dengan Haptic Tactile Bump Bar) -->
+        <rect x="224" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="231.2" y="304.8">J</text>
+        <line x1="229" y1="306" x2="233.5" y2="306" stroke="#4ade80" stroke-width="0.7" stroke-linecap="round" />
+        <!-- K -->
+        <rect x="240.5" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="247.7" y="304.8">K</text>
+        <!-- L -->
+        <rect x="257" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="264.2" y="304.8">L</text>
+        <!-- ; -->
+        <rect x="273.5" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="280.7" y="304.8" fill="#a4b7ab">;</text>
+        <!-- ' -->
+        <rect x="290" y="298.5" width="14.5" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="297.2" y="304.8" fill="#a4b7ab">'</text>
+      </g>
+
+      <!-- Return / Enter Key (Beraksen Hijau Forest & Panah ↵) -->
+      <g filter="url(#keyShadow)">
+        <rect x="306.5" y="298.5" width="51" height="8.5" rx="1.8" fill="#1b3827" stroke="#3d7353" stroke-width="0.8" />
+        <text x="323" y="304.7" fill="#ffffff" font-family="'Outfit', system-ui, sans-serif" font-size="4.6" font-weight="700">ENTER</text>
+        <!-- Panah Enter ↵ -->
+        <path d="M 347 301 L 347 304 L 341 304 M 343 302.2 L 340.5 304 L 343 305.8" fill="none" stroke="#4ade80" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+
+      <!-- - ROW 4: SHIFT ROW (y: 309.5, h: 9) - -->
+      <!-- Left Shift Key -->
+      <g filter="url(#keyShadow)">
+        <rect x="97" y="309.5" width="31" height="8.5" rx="1.6" fill="url(#keySurfaceGrad)" stroke="#325942" stroke-width="0.6" />
+        <text x="103" y="315.5" fill="#d2dec5" font-family="'Outfit', system-ui, sans-serif" font-size="4.2" font-weight="700">SHIFT</text>
+        <!-- Ikon Shift ⇧ -->
+        <path d="M 122 315.5 L 122 313.5 L 120.5 313.5 L 123 311 L 125.5 313.5 L 124 313.5 L 124 315.5 Z" fill="#8ca595" />
+      </g>
+
+      <!-- ZXCVBNM,./ -->
+      <g font-family="'Outfit', system-ui, sans-serif" font-size="5" font-weight="600" fill="#ffffff" text-anchor="middle">
+        <!-- Z -->
+        <rect x="130" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="137.4" y="315.8">Z</text>
+        <!-- X -->
+        <rect x="146.8" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="154.2" y="315.8">X</text>
+        <!-- C -->
+        <rect x="163.6" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="171" y="315.8">C</text>
+        <!-- V -->
+        <rect x="180.4" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="187.8" y="315.8">V</text>
+        <!-- B -->
+        <rect x="197.2" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="204.6" y="315.8">B</text>
+        <!-- N -->
+        <rect x="214" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="221.4" y="315.8">N</text>
+        <!-- M -->
+        <rect x="230.8" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="238.2" y="315.8">M</text>
+        <!-- , -->
+        <rect x="247.6" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="255" y="315.8" fill="#a4b7ab">,</text>
+        <!-- . -->
+        <rect x="264.4" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="271.8" y="315.8" fill="#a4b7ab">.</text>
+        <!-- / -->
+        <rect x="281.2" y="309.5" width="14.8" height="8.5" rx="1.5" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="288.6" y="315.8" fill="#a4b7ab">/</text>
+      </g>
+
+      <!-- Right Shift Key -->
+      <g filter="url(#keyShadow)">
+        <rect x="298" y="309.5" width="62" height="8.5" rx="1.6" fill="url(#keySurfaceGrad)" stroke="#325942" stroke-width="0.6" />
+        <text x="323" y="315.5" fill="#d2dec5" font-family="'Outfit', system-ui, sans-serif" font-size="4.2" font-weight="700">SHIFT</text>
+        <path d="M 345 315.5 L 345 313.5 L 343.5 313.5 L 346 311 L 348.5 313.5 L 347 313.5 L 347 315.5 Z" fill="#8ca595" />
+      </g>
+
+      <!-- - ROW 5: BOTTOM ROW & SPACEBAR (y: 320.5, h: 9.5) - -->
+      <!-- Left Modifiers -->
+      <g>
+        <!-- Ctrl -->
+        <rect x="96" y="320.5" width="15" height="9" rx="1.6" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="100" y="326.5" fill="#8ca595" font-family="'Outfit', system-ui, sans-serif" font-size="3.8" font-weight="700">CTRL</text>
+        <!-- Fn -->
+        <rect x="113" y="320.5" width="12" height="9" rx="1.6" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="116.5" y="326.5" fill="#4ade80" font-family="'Outfit', system-ui, sans-serif" font-size="3.8" font-weight="700">FN</text>
+        <!-- Win / Code Logo -->
+        <rect x="127" y="320.5" width="14" height="9" rx="1.6" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="131" y="326.5" fill="#8ca595" font-family="monospace" font-size="4.2" font-weight="700">&lt;/&gt;</text>
+        <!-- Alt -->
+        <rect x="143" y="320.5" width="15" height="9" rx="1.6" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="147.5" y="326.5" fill="#8ca595" font-family="'Outfit', system-ui, sans-serif" font-size="3.8" font-weight="700">ALT</text>
+      </g>
+
+      <!-- ================= SPACEBAR BERAKSEN AMBER "SADAR WATT" ================= -->
+      <g filter="url(#keyShadow)">
+        <!-- Spacebar Key Base -->
+        <rect x="160" y="320.5" width="116" height="9.5" rx="2" fill="#8c4905" />
+        <!-- Spacebar Surface Gradient -->
+        <rect x="160" y="320.5" width="116" height="8.7" rx="1.8" fill="url(#spacebarGrad)" stroke="#ffd080" stroke-width="0.6" />
+        <!-- Highlight Shimmer Line on Spacebar Top -->
+        <line x1="164" y1="321.3" x2="272" y2="321.3" stroke="#fff1cc" stroke-width="0.7" opacity="0.8" />
+        <!-- Iconic Embossed Label -->
+        <text x="218" y="326.8" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="5.2" font-weight="700" letter-spacing="0.1em" text-anchor="middle">⚡ SADAR WATT</text>
+      </g>
+
+      <!-- Right Modifiers -->
+      <g>
+        <!-- AltGr -->
+        <rect x="278" y="320.5" width="15" height="9" rx="1.6" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="281.5" y="326.5" fill="#8ca595" font-family="'Outfit', system-ui, sans-serif" font-size="3.8" font-weight="700">ALT</text>
+        <!-- Ctrl Right -->
+        <rect x="295" y="320.5" width="15" height="9" rx="1.6" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="298.5" y="326.5" fill="#8ca595" font-family="'Outfit', system-ui, sans-serif" font-size="3.8" font-weight="700">CTRL</text>
+      </g>
+
+      <!-- ================= GUGUS TOMBOL PANAH NAVIGASI (INVERTED-T) ================= -->
+      <g filter="url(#keyShadow)" font-family="system-ui, sans-serif" font-size="3.8" font-weight="700" fill="#d2dec5" text-anchor="middle">
+        <!-- Panah Kiri ◀ -->
+        <rect x="313" y="325" width="14" height="4.5" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="320" y="328.7">◀</text>
+
+        <!-- Panah Atas ▲ -->
+        <rect x="329" y="320.5" width="14" height="4.2" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="336" y="324">▲</text>
+
+        <!-- Panah Bawah ▼ -->
+        <rect x="329" y="325.2" width="14" height="4.3" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="336" y="328.8">▼</text>
+
+        <!-- Panah Kanan ▶ -->
+        <rect x="345" y="325" width="14" height="4.5" rx="1.2" fill="url(#keySurfaceGrad)" stroke="#2b4e38" stroke-width="0.5" />
+        <text x="352" y="328.7">▶</text>
+      </g>
+    </g>
+
+    <!-- ================= 6. TRACKPAD LAPTOP FROSTED GLASS ================= -->
+    <g filter="url(#keyShadow)">
+      <!-- Trackpad Well Shadow Perimeter -->
+      <rect x="175" y="340" width="110" height="38" rx="6" fill="#ded7c7" stroke="#c8c0b0" stroke-width="1" />
+      <!-- Glass Trackpad Body Surface -->
+      <rect x="176" y="340.5" width="108" height="36.5" rx="5" fill="url(#trackpadGrad)" />
+      <!-- Top Specular Highlight Rim -->
+      <line x1="182" y1="341.2" x2="278" y2="341.2" stroke="#ffffff" stroke-width="1" opacity="0.9" />
+      <!-- Tactile Click Separator Line -->
+      <line x1="230" y1="367" x2="230" y2="376" stroke="#b4aa98" stroke-width="1" stroke-linecap="round" />
+    </g>
+
+    <!-- ================= STIKER SISWA PPLG DI PALM REST ================= -->
+    <!-- Left Palm Rest: Student PPLG Developer Holographic Badge -->
+    <g transform="translate(85, 348)">
+      <rect x="0" y="0" width="62" height="23" rx="3.5" fill="#0d1811" stroke="#254d35" stroke-width="1" />
+      <!-- Hologram / Chip Icon Strip -->
+      <rect x="4" y="4" width="14" height="15" rx="2" fill="#183324" />
+      <text x="11" y="14" fill="#4ade80" font-family="monospace" font-size="7.5" font-weight="700" text-anchor="middle">&lt;/&gt;</text>
+      <!-- Badge Text -->
+      <text x="22" y="12" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="6.5" font-weight="700">PPLG DEV</text>
+      <text x="22" y="19" fill="#8ca595" font-family="monospace" font-size="4.8">SMK Wira</text>
+    </g>
+
+    <!-- Right Palm Rest: Eco Adiwiyata Badge -->
+    <g transform="translate(315, 348)">
+      <rect x="0" y="0" width="65" height="23" rx="3.5" fill="#fcfbf7" stroke="#c87d1a" stroke-width="1" />
+      <!-- Eco Leaf Vector Graphic -->
+      <circle cx="11" cy="11.5" r="7" fill="#eaf3ee" stroke="#183324" stroke-width="0.8" />
+      <path d="M 11 7 C 7.5 7.5, 6.5 11, 7.5 14 C 10.5 14.5, 14 12.5, 14 8.5 Z" fill="#2d6a4f" />
+      <path d="M 8 14 C 9.5 12, 11 9.5, 13 8" stroke="#ffffff" stroke-width="0.7" stroke-linecap="round" fill="none" />
+      <path d="M 11 11 C 12.5 10.5, 14.5 11, 15 13 C 13.5 13.5, 12 12.5, 11 11 Z" fill="#52b788" />
+      <!-- Badge Text -->
+      <text x="22" y="11.5" fill="#183324" font-family="'Space Grotesk', sans-serif" font-size="6.5" font-weight="700">ADIWIYATA</text>
+      <text x="22" y="18.5" fill="#c87d1a" font-family="'Space Grotesk', sans-serif" font-size="4.8" font-weight="700">HEMAT ENERGI</text>
+    </g>
 
     <!-- 7. PORT PENGISIAN DAYA & KONEKTOR KABEL DI SISI KANAN LAPTOP -->
-    <!-- Slot Port di Samping Kanan Bodi -->
     <rect x="378" y="273" width="5" height="5" rx="1" fill="#183324" />
-    <!-- Kepala Jack Charger Colok ke Port Laptop -->
     <rect x="382" y="272" width="10" height="7" rx="1.5" fill="#c87d1a" />
     <!-- Indikator LED Pengisian Daya (Hijau = Baterai 100% Penuh) -->
     <circle cx="380" cy="269" r="1.5" fill="#4ade80" />
@@ -212,17 +609,12 @@
 
   <!-- ================= STICKY NOTE: CATATAN LAB PPLG ================= -->
   <g transform="translate(425, 290) rotate(-4)" filter="url(#noteShadow)">
-    <!-- Sticky Note Paper -->
     <rect x="0" y="0" width="138" height="92" rx="3" fill="#fcf4e8" stroke="#e8dfce" stroke-width="1.2" />
-    
-    <!-- Washi tape at top -->
     <rect x="46" y="-7" width="46" height="15" fill="#d5cebe" opacity="0.9" rx="2" />
     
-    <!-- Note Heading -->
     <text x="14" y="22" fill="#9f5f0f" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="700" letter-spacing="0.06em">CATATAN LAB PPLG</text>
     <line x1="14" y1="27" x2="124" y2="27" stroke="#e8dfce" stroke-width="1" />
     
-    <!-- Note Content -->
     <text x="14" y="44" fill="#161d18" font-family="sans-serif" font-size="9.5" font-weight="600">"Selesai ngoding,</text>
     <text x="14" y="60" fill="#161d18" font-family="sans-serif" font-size="9.5" font-weight="600">jangan cuma tutup laptop.</text>
     <text x="14" y="77" fill="#c87d1a" font-family="sans-serif" font-size="10" font-weight="700">Cabut chargernya!"</text>
