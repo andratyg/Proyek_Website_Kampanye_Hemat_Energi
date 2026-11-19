@@ -1,9 +1,3 @@
-/**
- * Visualisasi Data & Fakta Perilaku Hemat Energi Siswa
- * Menggunakan Chart.js dan membaca data dari data-perilaku-energi.json
- * Kampanye Sadar Watt - SMK Wikrama Bogor
- */
-
 document.addEventListener("DOMContentLoaded", () => {
   initDataPage();
 });
@@ -43,10 +37,7 @@ async function initDataPage() {
   }
 }
 
-/**
- * Membaca data dari data-perilaku-energi.json dengan fallback ke DATA_ENERGI (data-perilaku-energi.js)
- * Ini memastikan halaman berfungsi baik di server lokal (fetch) maupun saat file dibuka langsung (CORS restriction fallback).
- */
+// Fallback to DATA_ENERGI handles file:// opens where fetch() is blocked by CORS.
 async function loadEnergyData() {
   try {
     const response = await fetch("data-perilaku-energi.json");
@@ -84,25 +75,26 @@ function renderKpiSummary(data) {
 
 const CHART_THEME = {
   fontFamily: "'Outfit', system-ui, -apple-system, sans-serif",
+  displayFont: "'Bricolage Grotesque', 'Outfit', system-ui, sans-serif",
   colors: {
-    forestDark: "#0c1f15",
-    forest: "#133826",
-    forestMid: "#1d4d35",
-    forestSoft: "#eaf3ee",
-    sage: "#3a6f53",
-    amber: "#c87d1a",
-    amberDark: "#8c4905",
-    amberSoft: "#fef7ed",
-    ink: "#141c17",
-    inkMuted: "#4f6356",
-    border: "#d4e0d8",
-    danger: "#b93828"
+    forestDark: "#0d2b1c",
+    forest: "#145333",
+    forestMid: "#1e7246",
+    forestSoft: "#e4f5e9",
+    sage: "#4d9a6c",
+    lime: "#d8f58e",
+    yellow: "#ffbe3b",
+    amber: "#ffbe3b",
+    amberDark: "#7c4100",
+    amberSoft: "#fff4d1",
+    ink: "#11241a",
+    inkMuted: "#2f4539",
+    border: "#11241a",
+    gridLine: "#dde8de",
+    danger: "#dc2626"
   }
 };
 
-/**
- * 1. Grafik Distribusi Kategori Perilaku Siswa (Doughnut Chart)
- */
 function renderCategoryChart(data) {
   const ctx = document.getElementById("chartCategory");
   if (!ctx) return;
@@ -126,13 +118,13 @@ function renderCategoryChart(data) {
           data: values,
           backgroundColor: [
             CHART_THEME.colors.forest,
-            CHART_THEME.colors.sage,
-            CHART_THEME.colors.amber,
+            CHART_THEME.colors.lime,
+            CHART_THEME.colors.yellow,
             CHART_THEME.colors.danger
           ],
-          borderColor: "#ffffff",
+          borderColor: CHART_THEME.colors.ink,
           borderWidth: 2,
-          hoverOffset: 6
+          hoverOffset: 8
         }
       ]
     },
@@ -170,9 +162,6 @@ function renderCategoryChart(data) {
   });
 }
 
-/**
- * 2. Grafik Fokus Titik Rawan: Persentase Respon 'Jarang/Tidak Pernah' (Bar Chart)
- */
 function renderConcernChart(data) {
   const ctx = document.getElementById("chartConcern");
   if (!ctx) return;
@@ -199,7 +188,9 @@ function renderConcernChart(data) {
           label: "Persentase Siswa Jarang / Tidak Pernah (%)",
           data: values,
           backgroundColor: colors,
-          borderRadius: 4,
+          borderColor: CHART_THEME.colors.ink,
+          borderWidth: 2,
+          borderRadius: 6,
           borderSkipped: false
         }
       ]
@@ -256,9 +247,6 @@ function renderConcernChart(data) {
   });
 }
 
-/**
- * 3. Grafik Skor Rata-rata 10 Butir Indikator (Horizontal Bar Chart dengan Opsi Urut)
- */
 function renderIndicatorsChart(data, sortBy = "score") {
   const ctx = document.getElementById("chartIndicators");
   if (!ctx) return;
@@ -296,7 +284,9 @@ function renderIndicatorsChart(data, sortBy = "score") {
           label: "Rata-rata Skor (Skala 1 - 4)",
           data: scores,
           backgroundColor: backgroundColors,
-          borderRadius: 4,
+          borderColor: CHART_THEME.colors.ink,
+          borderWidth: 2,
+          borderRadius: 6,
           borderSkipped: false
         }
       ]
@@ -354,9 +344,6 @@ function renderIndicatorsChart(data, sortBy = "score") {
   });
 }
 
-/**
- * 4. Grafik Rata-rata Skor per Konsentrasi Keahlian (Bar Chart Vertikal)
- */
 function renderJurusanChart(data) {
   const ctx = document.getElementById("chartJurusan");
   if (!ctx) return;
@@ -384,6 +371,8 @@ function renderJurusanChart(data) {
           label: "Rata-rata Skor Jurusan",
           data: scores,
           backgroundColor: colors,
+          borderColor: CHART_THEME.colors.ink,
+          borderWidth: 2,
           borderRadius: 6,
           borderSkipped: false
         }
@@ -449,9 +438,6 @@ function renderJurusanChart(data) {
   });
 }
 
-/**
- * 5. Pengaturan Tombol Urut Indikator
- */
 function setupIndicatorsSort(data) {
   const btnSortScore = document.getElementById("btnSortScore");
   const btnSortCode = document.getElementById("btnSortCode");
@@ -474,30 +460,142 @@ function setupIndicatorsSort(data) {
   });
 }
 
-/**
- * 6. Pengaturan Navigasi Cepat Halaman Data
- */
 function setupQuickNav() {
-  const links = document.querySelectorAll(".quicknav-link");
+  const quicknav = document.querySelector(".data-quicknav");
+  const list = document.querySelector(".quicknav-list");
+  const links = Array.from(document.querySelectorAll(".quicknav-link"));
+  if (!quicknav || !list || links.length === 0) return;
+
+  const header = document.querySelector(".site-header");
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const sections = links
+    .map((link) => {
+      const targetId = link.getAttribute("href");
+      const targetEl = targetId && targetId.startsWith("#") ? document.querySelector(targetId) : null;
+      return targetEl ? { link, targetEl } : null;
+    })
+    .filter(Boolean);
+
+  if (sections.length === 0) return;
+
+  let currentLink = null;
+  let clickLockTimer = null;
+  let rafScheduled = false;
+
+  function syncStickyOffsets() {
+    const headerHeight = header ? Math.round(header.getBoundingClientRect().height) : 74;
+    const quicknavHeight = Math.round(quicknav.getBoundingClientRect().height) || 58;
+    document.documentElement.style.setProperty("--header-height", `${headerHeight}px`);
+    document.documentElement.style.setProperty("--data-scroll-offset", `${headerHeight + quicknavHeight + 22}px`);
+    return headerHeight + quicknavHeight;
+  }
+
+  function centerActivePill(link) {
+    if (list.scrollWidth <= list.clientWidth) return;
+    const targetLeft = link.offsetLeft - (list.clientWidth - link.offsetWidth) / 2;
+    list.scrollTo({
+      left: Math.max(0, targetLeft),
+      behavior: prefersReduced ? "auto" : "smooth"
+    });
+  }
+
+  function setActiveLink(activeLink, shouldCenter) {
+    if (currentLink === activeLink) return;
+    currentLink = activeLink;
+
+    links.forEach((link) => {
+      const isActive = link === activeLink;
+      link.classList.toggle("active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+
+    if (shouldCenter) {
+      centerActivePill(activeLink);
+    }
+  }
+
+  function updateActiveOnScroll() {
+    if (clickLockTimer) return;
+    const stickyOffset = syncStickyOffsets();
+    const atBottom =
+      window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 24;
+
+    if (atBottom) {
+      setActiveLink(sections[sections.length - 1].link, true);
+      return;
+    }
+
+    const activationLine = stickyOffset + 64;
+    let activeItem = sections[0];
+    for (const item of sections) {
+      if (item.targetEl.getBoundingClientRect().top <= activationLine) {
+        activeItem = item;
+      } else {
+        break;
+      }
+    }
+
+    setActiveLink(activeItem.link, true);
+  }
+
+  function releaseClickLock() {
+    if (!clickLockTimer) return;
+    window.clearTimeout(clickLockTimer);
+    clickLockTimer = null;
+  }
+
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
       const targetId = link.getAttribute("href");
-      if (targetId && targetId.startsWith("#")) {
-        const targetEl = document.querySelector(targetId);
-        if (targetEl) {
-          e.preventDefault();
-          targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
-          links.forEach((l) => l.classList.remove("active"));
-          link.classList.add("active");
-        }
-      }
+      if (!targetId || !targetId.startsWith("#")) return;
+      const targetEl = document.querySelector(targetId);
+      if (!targetEl) return;
+
+      e.preventDefault();
+      syncStickyOffsets();
+      setActiveLink(link, true);
+      releaseClickLock();
+      // Hold spy updates briefly while smooth scroll glides past intermediate sections.
+      clickLockTimer = window.setTimeout(() => {
+        clickLockTimer = null;
+        updateActiveOnScroll();
+      }, prefersReduced ? 50 : 650);
+
+      targetEl.scrollIntoView({
+        behavior: prefersReduced ? "auto" : "smooth",
+        block: "start"
+      });
     });
   });
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (rafScheduled) return;
+      rafScheduled = true;
+      window.requestAnimationFrame(() => {
+        rafScheduled = false;
+        updateActiveOnScroll();
+      });
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("wheel", releaseClickLock, { passive: true });
+  window.addEventListener("touchstart", releaseClickLock, { passive: true });
+  window.addEventListener("resize", () => {
+    syncStickyOffsets();
+    updateActiveOnScroll();
+  });
+
+  syncStickyOffsets();
+  updateActiveOnScroll();
 }
 
-/**
- * 7. Filter dan Pencarian Cepat Tabel Matriks
- */
 function setupTableControls(allButir) {
   const searchInput = document.getElementById("tableSearchInput");
   const filterPills = document.querySelectorAll(".filter-pill");

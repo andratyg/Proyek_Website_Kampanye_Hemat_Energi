@@ -5,123 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Sadar Watt : Inisiatif kampanye persuasif konservasi dan hemat energi di lingkungan sekolah. Proyek ESD siswa kelas PPLG-3 berkolaborasi dengan mata pelajaran Bahasa Indonesia."
+      content="Sadar Watt: kampanye hemat energi siswa XI PPLG-3 SMK Wikrama Bogor berbasis data 636 responden dan aksi nyata sekolah Adiwiyata."
     />
-    <title>Sadar Watt : Kampanye Konservasi & Hemat Energi Sekolah</title>
+    <title>Sadar Watt : Kampanye Hemat Energi Sekolah</title>
+    <link rel="icon" href="data:," />
 
-    <!-- Google Fonts: Outfit (Unified Headings & Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- ================= 1. HEADER / NAVIGATION ================= -->
+    <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+
     <header class="site-header">
       <div class="container nav-container">
         <div class="brand">
-          <a
-            href="index.html"
-            class="brand-name"
-            aria-label="Beranda Sadar Watt"
-            >Sadar<span>Watt</span>.</a
+          <a href="index.html" class="brand-name" aria-label="Beranda Sadar Watt"
+            >Sadar<span>Watt.</span></a
           >
         </div>
 
-        <!-- Hamburger Button (Mobile) -->
         <button
+          type="button"
           class="nav-toggle"
           id="navToggle"
           aria-label="Buka menu navigasi"
           aria-expanded="false"
+          aria-controls="navMenu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span class="nav-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="nav-toggle-label">Menu</span>
         </button>
 
-        <!-- Nav Links -->
         <nav class="nav-menu" id="navMenu" aria-label="Navigasi Utama">
           <ul class="nav-list">
-            <li><a href="index.html" class="nav-link active">Beranda</a></li>
+            <li>
+              <a href="index.html" class="nav-link active" aria-current="page"
+                >Beranda</a
+              >
+            </li>
             <li><a href="tentang.html" class="nav-link">Tentang</a></li>
             <li><a href="data.html" class="nav-link">Data & Fakta</a></li>
             <li>
-              <span
-                class="nav-link-disabled"
-                title="Panduan aksi nyata dan komitmen hemat energi (Fase 3)"
-              >
-                Aksi
-               
-              </span>
+              <a href="aksi.html" class="nav-link">Aksi & Rekomendasi</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main id="main-content">
-      <!-- ================= 2. HERO SECTION (ASYMMETRIC) ================= -->
+    <main id="main-content" tabindex="-1">
       <section class="hero-section">
         <div class="container hero-grid">
-          <!-- Left: Text Editorial -->
           <div class="hero-content">
-            <div class="tag-label">Inisiatif Siswa PPLG • Sekolah Adiwiyata</div>
-            <h1 class="hero-title">Sadar Watt.</h1>
+            <p class="page-kicker">
+              Inisiatif XI PPLG-3 • Sekolah Adiwiyata SMK Wikrama Bogor
+            </p>
+            <h1 class="hero-title">
+              Sadar <span class="pop-word">Watt.</span>
+            </h1>
             <p class="hero-tagline">
               "Listrik jalan terus kalau kita nggak sadar."
             </p>
             <p class="hero-desc">
-              Berapa banyak kipas angin dinding yang tetap berputar kencang di
-              ruang kelas kosong saat jam olahraga? Berapa charger laptop di
-              meja kelas dan lab yang terus menancap semalaman padahal
-              baterainya sudah penuh? Sebagai sekolah Adiwiyata yang
-              mengandalkan ventilasi alami tanpa AC, hemat energi adalah ujian
-              konsistensi kita yang sesungguhnya.
+              Sekolah kita sudah keren karena bebas AC. Tantangan aslinya ada di
+              kipas angin ruang kosong, proyektor lupa mati, dan charger laptop
+              yang terus nancap sepulang praktik.
             </p>
 
             <div class="hero-actions">
-              <a href="tentang.html" class="btn btn-primary"
-                >Baca Cerita Kami</a
+              <a href="aksi.html" class="btn btn-pop-yellow"
+                >Lihat 5 Aksi Berbasis Data</a
               >
               <a href="data.html" class="btn btn-secondary"
-                >Telusuri Data 636 Siswa</a
+                >Cek Data 636 Siswa</a
               >
             </div>
 
             <div class="hero-stat-chips">
-              <div class="hero-chip-item">
+              <div class="hero-chip-item pop-lime">
                 <span class="hero-chip-num">636</span>
-                <span class="hero-chip-label">Responden Angket</span>
+                <span class="hero-chip-label">Responden Kelas XI</span>
+              </div>
+              <div class="hero-chip-item pop-yellow">
+                <span class="hero-chip-num">3.36 / 4</span>
+                <span class="hero-chip-label">Skor Sangat Baik</span>
               </div>
               <div class="hero-chip-item">
-                <span class="hero-chip-num">3.36</span>
-                <span class="hero-chip-label">Rata-rata Skor (Sangat Baik)</span>
-              </div>
-              <div class="hero-chip-item">
-                <span class="hero-chip-num">0 Unit AC</span>
+                <span class="hero-chip-num">0 AC</span>
                 <span class="hero-chip-label">100% Ventilasi Alami</span>
               </div>
             </div>
-
-            <!-- Real Observation Lab Note -->
-            <div class="hero-lab-note" style="margin-top: 1.5rem;">
-              <span class="note-badge">CATATAN PPLG</span>
-              <p>
-                Di kelas maupun lab saat memakai laptop, kebiasaan menekan
-                sakelar stopkontak ke posisi <strong>OFF</strong> sepulang
-                sekolah bisa memangkas daya listrik laten hingga puluhan
-                kilowatt tiap minggunya.
-              </p>
-            </div>
           </div>
 
-          <!-- Right: Original Handcrafted SVG Illustration -->
           <div class="hero-visual">
             <div class="visual-frame">
               <img
@@ -129,182 +114,178 @@
                 alt="Ilustrasi laptop siswa di meja praktik, kabel charger, dan stopkontak dengan sakelar menyala"
                 width="600"
                 height="480"
+                fetchpriority="high"
               />
             </div>
             <div class="visual-caption">
-              <span>Ilustrasi: Meja Praktik & Stopkontak Laptop</span>
-              <span class="status-live">Fase 2 Rilis</span>
+              <span>Meja Praktik & Stopkontak Lab PPLG</span>
+              <span>Kampanye Lengkap: Fase 1 - 3</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================= 3. LATAR BELAKANG & FAKTA UMUM PEMBOROSAN ================= -->
-      <section id="latar-belakang" class="section">
+      <div class="zine-ribbon-wrap on-sunny" aria-hidden="true">
+        <div class="zine-ribbon">
+          <span>LISTRIK JALAN TERUS KALAU KITA NGGAK SADAR</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>SEKOLAH ADIWIYATA 0 AC</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>636 RESPONDEN KELAS XI</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>SADAR WATT</span>
+        </div>
+      </div>
+
+      <section id="latar-belakang" class="section section-sunny reveal">
         <div class="container">
           <div class="section-head">
-            <h2 class="section-title">Kenapa Kampanye Ini Sangat Mendesak?</h2>
+            <span class="sticker-tag">Realitas di Kelas & Lab</span>
+            <h2 class="section-title">Tiga Kebocoran Listrik Paling Sering</h2>
             <p class="section-subtitle">
-              Sebagai sekolah berwawasan lingkungan (Adiwiyata), kita sudah
-              membuktikan komitmen dengan tidak memakai pendingin ruangan (AC).
-              Tapi predikat Adiwiyata bukan cuma plang di gerbang: pemborosan
-              listrik laten tetap mengintai di balik sakelar kipas angin dan
-              colokan kelas kita.
+              Tanpa AC bukan berarti bebas boros. Tiga kebiasaan kecil ini yang
+              paling sering kejadian tiap hari di sekolah.
             </p>
           </div>
 
           <div class="context-grid">
-            <!-- Left: Narrative Background -->
             <div class="context-narrative">
-              <h3>
-                Bukan Soal Nominal Listrik, Tapi Menjaga Integritas Adiwiyata
-              </h3>
+              <h3>Jaga Integritas Sekolah Adiwiyata Lewat Hal Kecil</h3>
               <p>
-                Di sekolah kita yang berpredikat Adiwiyata, ketiadaan AC adalah
-                langkah sadar demi menekan jejak karbon dan emisi gas rumah
-                kaca. Sekolah kita dirancang dengan sirkulasi udara alami yang
-                segar, deretan jendela kelas yang lebar, serta naungan
-                pohon-pohon rindang yang dibantu hembusan kipas angin dinding.
-                Ini adalah kebanggaan bersama yang sepatutnya kita syukuri dan
-                rawat.
+                Gedung kita dirancang teduh dengan jendela lebar dan pepohonan.
+                Tapi saat kelas ditinggal olahraga atau jam pulang tiba,
+                sakelar kipas dan kabel roll lab masih sering dibiarkan menyala.
               </p>
-              <p>
-                Namun, justru karena merasa "sekolah kita tidak pakai AC",
-                sering kali muncul titik buta: deretan 4 hingga 6 kipas angin
-                dinding di tiap kelas dibiarkan terus berputar sia-sia saat
-                ruangan kosong ditinggal olahraga, upacara, atau istirahat.
-                Ditambah proyektor yang menyala tanpa pemakaian dan fenomena
-                <em>phantom load</em> dari puluhan adaptor charger laptop yang
-                dibiarkan menancap di stopkontak. Di sekolah Adiwiyata,
-                pemborosan energi sekecil apa pun adalah kontradiksi yang harus
-                kita selesaikan bersama.
-              </p>
+              <div class="context-quote-chip">
+                Satu klik sakelar ke posisi OFF sebelum keluar pintu sudah cukup
+                untuk memutus daya siaga tiap sore.
+              </div>
             </div>
 
-            <!-- Right: Concrete Common Waste Checkpoints -->
-            <div class="waste-points">
-              <div class="waste-points-title">
-                Titik Rawan Pemborosan Listrik Sekolah
-              </div>
-              <ul class="waste-list">
-                <li class="waste-item">
-                  <span class="waste-marker">01</span>
-                  <div class="waste-text">
-                    <h4>Vampire Power Adaptor Charger</h4>
-                    <p>
-                      Charger laptop dan HP yang ditinggal colok di meja kelas
-                      tetap mengonsumsi daya 0,5 – 3 Watt secara terus-menerus
-                      tanpa henti.
-                    </p>
-                  </div>
-                </li>
-                <li class="waste-item">
-                  <span class="waste-marker">02</span>
-                  <div class="waste-text">
-                    <h4>Kipas Angin Berputar di Ruang Kosong</h4>
-                    <p>
-                      Saat jam olahraga, upacara, atau istirahat siang, 4–6 unit
-                      kipas angin dinding sering kali dibiarkan menderu kencang
-                      tanpa ada satu pun orang di kelas.
-                    </p>
-                  </div>
-                </li>
-                <li class="waste-item">
-                  <span class="waste-marker">03</span>
-                  <div class="waste-text">
-                    <h4>Laptop dalam Mode Siaga (Sleep) & Terus Dicas</h4>
-                    <p>
-                      Laptop yang ditutup layarnya dalam mode sleep sambil kabel
-                      adaptor tetap terpasang terus menyedot arus listrik.
-                      Shutdown dan cabut charger adalah kuncinya.
-                    </p>
-                  </div>
-                </li>
-              </ul>
+            <div class="waste-cards-stack">
+              <article class="waste-pop-card">
+                <span class="sticker-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="#11241a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 6v6M20 6v6M8 12h16v4a8 8 0 0 1-16 0v-4zM16 24v4"/>
+                  </svg>
+                </span>
+                <div class="waste-text">
+                  <h3>01. Charger Nancap Terus</h3>
+                  <p>
+                    Adaptor laptop dan HP yang ditinggal colok tetap menyedot
+                    0,5 sampai 3 Watt tanpa henti.
+                  </p>
+                </div>
+              </article>
+
+              <article class="waste-pop-card">
+                <span class="sticker-icon lime" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="#11241a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="16" cy="16" r="3"/>
+                    <path d="M16 13c-1-5 2-8 5-7s3 5-2 7M19 16c5-1 8 2 7 5s-5 3-7-2M16 19c1 5-2 8-5 7s-3-5 2-7M13 16c-5 1-8-2-7-5s5-3 7 2"/>
+                  </svg>
+                </span>
+                <div class="waste-text">
+                  <h3>02. Kipas Menderu di Kelas Kosong</h3>
+                  <p>
+                    4 sampai 6 kipas dinding sering dibiarkan menyala saat jam
+                    olahraga, upacara, atau istirahat.
+                  </p>
+                </div>
+              </article>
+
+              <article class="waste-pop-card">
+                <span class="sticker-icon white" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="#11241a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="6" y="7" width="20" height="14" rx="2"/>
+                    <path d="M3 25h26M12 13h8M14 16h4"/>
+                  </svg>
+                </span>
+                <div class="waste-text">
+                  <h3>03. Laptop Mode Sleep Sambil Dicas</h3>
+                  <p>
+                    Layar ditutup tapi charger tetap terpasang terus menarik
+                    listrik. Biasakan shutdown dan cabut colokan.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================= 4. TUJUAN KAMPANYE (MANIFESTO TAKTIS) ================= -->
-      <section class="section section-alt">
+      <section class="section section-alt reveal">
         <div class="container">
           <div class="section-head">
-            <h2 class="section-title">Tiga Sasaran Sadar Watt di Sekolah</h2>
-            <p class="section-subtitle">
-              Kami tidak menuntut perubahan besar yang rumit. Target kampanye
-              ini dirancang spesifik agar dapat dijalankan langsung oleh siapa
-              pun di lingkungan sekolah Adiwiyata kita.
-            </p>
+            <span class="sticker-tag yellow">Target Harian</span>
+            <h2 class="section-title">Tiga Refleks Cepat Anak Sadar Watt</h2>
           </div>
 
           <div class="goals-container">
-            <!-- Item 01 -->
             <article class="goal-manifesto">
               <div class="goal-index">01</div>
-              <h3>Membuka Mata Sebelum Menutup Pintu</h3>
+              <h3>Cek Sebelum Tutup Pintu</h3>
               <p>
-                Menumbuhkan refleks otomatis bagi siswa dan guru: setiap kali
-                menjadi orang terakhir yang keluar ruangan, pastikan sakelar
-                lampu, kipas angin dinding, dan proyektor dalam posisi mati.
+                Orang terakhir yang keluar kelas memastikan lampu, kipas
+                dinding, dan proyektor dalam posisi mati.
               </p>
             </article>
 
-            <!-- Item 02 -->
             <article class="goal-manifesto">
               <div class="goal-index">02</div>
-              <h3>Maksimalkan Angin Alami & Tertib Kipas</h3>
+              <h3>Buka Jendela Dulu</h3>
               <p>
-                Membuka jendela lebar-lebar untuk memanfaatkan hembusan angin
-                alami saat pagi hari yang sejuk, serta memadamkan sakelar kipas
-                angin begitu kelas ditinggalkan kosong.
+                Manfaatkan cahaya matahari dan angin pagi dulu sebelum menyentuh
+                sakelar lampu atau kipas.
               </p>
             </article>
 
-            <!-- Item 03 -->
             <article class="goal-manifesto">
               <div class="goal-index">03</div>
-              <h3>Disiplin Cabut Stopkontak Lab & Kelas</h3>
+              <h3>Switch Kabel Roll OFF</h3>
               <p>
-                Menghentikan kebiasaan membiarkan kabel roll berserakan dalam
-                kondisi switch ON seusai jam pelajaran produktif atau sesi
-                coding selesai.
+                Selesai ngoding atau praktik, matikan sakelar merah kabel roll
+                dan cabut adaptor dari meja.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ================= 5. TEASER DATA & FAKTA (FASE 2) ================= -->
-      <section class="section" style="padding-top: 0">
+      <section class="section reveal">
         <div class="container">
           <div class="teaser-board">
             <div class="teaser-content">
-              <span class="teaser-tag">Fase 2 Siap • Data Empiris</span>
-              <h3>Hasil Analisis 636 Responden Telah Rilis.</h3>
+              <span class="teaser-tag">Fase 3 Rilis • Kampanye Lengkap</span>
+              <h2>Dari Data 636 Siswa ke Aksi Nyata.</h2>
               <p>
-                Kuesioner perilaku hemat energi siswa kelas XI telah diolah ke dalam grafik interaktif Chart.js.
-                Ketahui butir kebiasaan terbaik dan titik kritis pemborosan listrik di sekolah.
+                Cek 4 grafik hasil survei kelas XI, pilih rombelmu, lalu jalankan
+                5 rekomendasi konkret dan tantangan hemat energi 7 hari.
               </p>
-              <div style="margin-top: 1.5rem;">
-                <a href="data.html" class="btn btn-primary" style="background-color: var(--color-amber); border-color: var(--color-amber)">Buka Halaman Data & Fakta</a>
+              <div class="takeaway-actions">
+                <a href="aksi.html" class="btn btn-accent-dark"
+                  >Buka Aksi & Rekomendasi</a
+                >
+                <a href="data.html" class="btn btn-outline-light"
+                  >Tinjau Data & Fakta</a
+                >
               </div>
             </div>
 
             <div class="teaser-status-card">
-              <h4>Status Proyek Kampanye</h4>
+              <h3>Status Proyek Kampanye</h3>
               <ul class="status-step-list">
                 <li class="status-step">
-                  <span class="bullet-done">✓</span>
+                  <span class="bullet-done" aria-hidden="true">✓</span>
                   <span>Fase 1: Narasi & Isu Utama</span>
                 </li>
                 <li class="status-step">
-                  <span class="bullet-done">✓</span>
-                  <span>Fase 2: Visualisasi Data & Fakta JSON</span>
+                  <span class="bullet-done" aria-hidden="true">✓</span>
+                  <span>Fase 2: Data 636 Siswa & Chart.js</span>
                 </li>
                 <li class="status-step">
-                  <span class="bullet-progress"></span>
-                  <span>Fase 3: Aksi Nyata & Komitmen</span>
+                  <span class="bullet-done" aria-hidden="true">✓</span>
+                  <span>Fase 3: Rekomendasi & Ajakan Aksi</span>
                 </li>
               </ul>
             </div>
@@ -312,34 +293,34 @@
         </div>
       </section>
 
-      <!-- ================= 6. IDENTITAS PEMBUAT ================= -->
-      <section class="section" style="padding-top: 0">
+      <section class="section reveal" style="padding-top: 0">
         <div class="container">
           <div class="identity-box">
             <div class="identity-header">
-              <div>
-                <h3>Identitas Inisiator Kampanye</h3>
-              </div>
+              <h2>Tim Inisiator Sadar Watt</h2>
               <span class="identity-meta-tag"
-                >SMK Wikrama Bogor • Jurusan PPLG • Kelas XI</span
+                >SMK Wikrama Bogor • XI PPLG-3</span
               >
             </div>
 
             <div class="identity-grid">
               <div class="identity-col">
-                <h4>Tim / Kelompok Penyusun</h4>
-               
+                <h3>Penyusun</h3>
                 <span class="placeholder-highlight">
-                  Daniyal , Manu, Nara Andra Tyaga
+                  Daniyal, Manu, Nara Andra Tyaga
                 </span>
               </div>
 
               <div class="identity-col">
-                <h4>Kelas & Kejuruan</h4>
+                <h3>Kejuruan</h3>
                 <p>Kelas XI PPLG-3</p>
-                <p style="font-size: 0.85rem; color: var(--color-ink-muted)">
-                  Pengembangan Perangkat Lunak dan Gim
-                </p>
+                <p class="meta-sub">Pengembangan Perangkat Lunak dan Gim</p>
+              </div>
+
+              <div class="identity-col">
+                <h3>Progres Proyek</h3>
+                <p>Fase 3: Aksi & Rekomendasi</p>
+                <p class="meta-sub">Alur Lengkap: Beranda, Data, Aksi</p>
               </div>
             </div>
           </div>
@@ -347,29 +328,50 @@
       </section>
     </main>
 
-    <!-- ================= 7. FOOTER ================= -->
     <footer class="site-footer">
+      <div class="footer-tape-wrap" aria-hidden="true">
+        <div class="footer-tape">
+          <span>CABUT CHARGER</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>MATIKAN KIPAS</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>BUKA JENDELA</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>SAKELAR OFF</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>SADAR WATT</span>
+        </div>
+      </div>
+
       <div class="container">
         <div class="footer-top">
           <div class="footer-brand">
-            <h3>Sadar<span>Watt</span>.</h3>
+            <h3>Sadar<span>Watt.</span></h3>
             <p>
-              Gerakan independen konservasi energi yang diinisiasi oleh siswa
-              kelas PPLG-3. Bertujuan menciptakan budaya hemat listrik yang
-              nyata, terukur, dan berkelanjutan di lingkungan sekolah.
+              Kampanye hemat listrik siswa XI PPLG-3 untuk ruang kelas dan lab
+              yang peduli energi di SMK Wikrama Bogor.
             </p>
+            <div class="footer-eco-chips">
+              <span class="footer-eco-chip">Sekolah Adiwiyata</span>
+              <span class="footer-eco-chip yellow">0 AC</span>
+              <span class="footer-eco-chip">636 Responden</span>
+            </div>
           </div>
 
           <div class="footer-nav">
-            <h4>Navigasi Halaman</h4>
-            <ul>
-              <li><a href="index.html">Beranda</a></li>
-              <li><a href="tentang.html">Cerita di Balik Kampanye</a></li>
-              <li><a href="data.html">Data & Fakta</a></li>
+            <h4>Jelajahi Halaman</h4>
+            <ul class="footer-nav-grid">
               <li>
-                <span style="color: #6b7f74; font-size: 0.9rem"
-                  >Panduan Aksi (Fase 3)
-                </span>
+                <a href="index.html" class="footer-nav-btn current" aria-current="page">Beranda</a>
+              </li>
+              <li>
+                <a href="tentang.html" class="footer-nav-btn">Tentang</a>
+              </li>
+              <li>
+                <a href="data.html" class="footer-nav-btn">Data & Fakta</a>
+              </li>
+              <li>
+                <a href="aksi.html" class="footer-nav-btn">Aksi & Rekomendasi</a>
               </li>
             </ul>
           </div>
@@ -377,11 +379,16 @@
 
         <div class="footer-bottom">
           <p>© 2026 Kampanye Sadar Watt - Kelas PPLG XI-3 SMK Wikrama Bogor.</p>
+          <button type="button" class="btn-back-top" id="btnBackToTop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            <span>Kembali ke Atas</span>
+          </button>
         </div>
       </div>
     </footer>
 
-    <!-- Script Interaksi -->
     <script src="js/main.js"></script>
   </body>
 </html>

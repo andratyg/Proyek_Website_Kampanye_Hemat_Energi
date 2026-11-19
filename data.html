@@ -5,100 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Data dan fakta hasil kuesioner perilaku hemat energi siswa kelas XI SMK Wikrama Bogor. Analisis kuantitatif berbasis data riil 636 responden untuk kampanye Sadar Watt."
+      content="Data dan fakta hasil kuesioner perilaku hemat energi 636 siswa kelas XI SMK Wikrama Bogor untuk kampanye Sadar Watt."
     />
     <title>Data & Fakta : Sadar Watt</title>
+    <link rel="icon" href="data:," />
 
-    <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- ================= 1. HEADER / NAVIGATION ================= -->
+    <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+
     <header class="site-header">
       <div class="container nav-container">
         <div class="brand">
-          <a
-            href="index.html"
-            class="brand-name"
-            aria-label="Beranda Sadar Watt"
-            >Sadar<span>Watt</span>.</a
+          <a href="index.html" class="brand-name" aria-label="Beranda Sadar Watt"
+            >Sadar<span>Watt.</span></a
           >
         </div>
 
-        <!-- Hamburger Button (Mobile) -->
         <button
+          type="button"
           class="nav-toggle"
           id="navToggle"
           aria-label="Buka menu navigasi"
           aria-expanded="false"
+          aria-controls="navMenu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span class="nav-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="nav-toggle-label">Menu</span>
         </button>
 
-        <!-- Nav Links -->
         <nav class="nav-menu" id="navMenu" aria-label="Navigasi Utama">
           <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Beranda</a></li>
             <li><a href="tentang.html" class="nav-link">Tentang</a></li>
-            <li><a href="data.html" class="nav-link active">Data & Fakta</a></li>
             <li>
-              <span
-                class="nav-link-disabled"
-                title="Panduan aksi nyata dan komitmen hemat energi (Fase 3)"
+              <a href="data.html" class="nav-link active" aria-current="page"
+                >Data & Fakta</a
               >
-                Aksi
-              
-              </span>
+            </li>
+            <li>
+              <a href="aksi.html" class="nav-link">Aksi & Rekomendasi</a>
             </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main id="main-content">
-      <!-- ================= 2. DATA HERO SECTION ================= -->
+    <main id="main-content" tabindex="-1">
       <section class="data-hero">
         <div class="container">
           <div class="data-hero-inner">
-            <div class="tag-label">
-              Bukti Empiris Lapangan • Kuesioner Siswa Kelas XI
-            </div>
-            <h1 class="hero-title">Data & Fakta Perilaku Energi.</h1>
+            <p class="page-kicker">
+              Fase 2 • Survei 636 Siswa Kelas XI di 7 Jurusan
+            </p>
+            <h1 class="hero-title">
+              Data & <span class="pop-word">Fakta</span> Energi.
+            </h1>
             <p class="hero-desc">
-              Analisis kuantitatif dari 636 responden siswa kelas XI di 7 kompetensi keahlian.
-              Data ini menjadi landasan objektif kampanye Sadar Watt untuk memetakan kebiasaan
-              yang sudah baik dan titik kritis yang masih rawan pemborosan listrik.
+              Bukan tebak-tebakan. Ini potret nyata kebiasaan hemat listrik siswa
+              SMK Wikrama Bogor: mana yang sudah mantap, mana yang masih bolong.
             </p>
 
             <div class="data-meta-bar">
               <div class="meta-item">
-                <span class="meta-label">Sumber Instrumen</span>
-                <span class="meta-value">Kuesioner ENERGI XI (Skala Likert 1-4)</span>
+                <span class="meta-label">Instrumen</span>
+                <span class="meta-value">Kuesioner ENERGI XI (Skala 1-4)</span>
               </div>
               <div class="meta-item">
-                <span class="meta-label">Periode Pengumpulan</span>
-                <span class="meta-value">12 Oktober - 5 November 2026</span>
+                <span class="meta-label">Periode</span>
+                <span class="meta-value">12 Okt - 5 Nov 2026</span>
               </div>
               <div class="meta-item">
-                <span class="meta-label">Validitas Responden</span>
-                <span class="meta-value">636 dari 639 siswa (Partisipasi 99.4%)</span>
+                <span class="meta-label">Partisipasi</span>
+                <span class="meta-value">636 dari 639 siswa (99.4%)</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================= 3. KPI STATS SECTION ================= -->
       <section class="section-kpi">
         <div class="container">
           <div class="kpi-grid">
@@ -108,16 +105,16 @@
                 <span class="kpi-chip">99.4% Valid</span>
               </div>
               <div class="kpi-number" id="kpiTotalResponden">636 Siswa</div>
-              <p class="kpi-caption">Representasi andal dari total 639 siswa kelas XI terdata</p>
+              <p class="kpi-caption">Dari 639 siswa kelas XI terdata.</p>
             </div>
 
             <div class="kpi-card highlight">
               <div class="kpi-card-header">
-                <span class="kpi-label">Rata-rata Skor Total</span>
+                <span class="kpi-label">Skor Rata-rata</span>
                 <span class="kpi-chip chip-amber">Sangat Baik</span>
               </div>
               <div class="kpi-number" id="kpiRataRataSkor">3.36 / 4.00</div>
-              <p class="kpi-caption">Melampaui ambang batas kategori Sangat Baik (3.26 - 4.00)</p>
+              <p class="kpi-caption">Di atas ambang Sangat Baik (3.26).</p>
             </div>
 
             <div class="kpi-card">
@@ -126,111 +123,99 @@
                 <span class="kpi-chip">612 Siswa</span>
               </div>
               <div class="kpi-number" id="kpiPersenPositif">96.2%</div>
-              <p class="kpi-caption">Gabungan kategori Sangat Baik (59.4%) dan Baik (36.8%)</p>
+              <p class="kpi-caption">Sangat Baik 59.4% + Baik 36.8%.</p>
             </div>
 
             <div class="kpi-card">
               <div class="kpi-card-header">
-                <span class="kpi-label">Tingkat Partisipasi</span>
+                <span class="kpi-label">Cakupan Jurusan</span>
                 <span class="kpi-chip">7 Jurusan</span>
               </div>
               <div class="kpi-number" id="kpiPartisipasi">99.4%</div>
-              <p class="kpi-caption">Hanya 1 siswa berkategori Kurang di seluruh angkatan</p>
+              <p class="kpi-caption">Hanya 1 siswa di kategori Kurang.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- In-page Navigation Strip -->
       <nav class="data-quicknav" aria-label="Navigasi Cepat Halaman Data">
         <div class="container">
           <ul class="quicknav-list">
-            <li><a href="#grafik-kategori" class="quicknav-link">01. Kategori</a></li>
-            <li><a href="#grafik-rawan" class="quicknav-link">02. Titik Rawan</a></li>
-            <li><a href="#grafik-indikator" class="quicknav-link">03. 10 Indikator</a></li>
-            <li><a href="#grafik-jurusan" class="quicknav-link">04. Per Jurusan</a></li>
-            <li><a href="#tabel-data" class="quicknav-link">05. Tabel Data</a></li>
-            <li><a href="#wawasan-kritis" class="quicknav-link">06. Wawasan & Solusi</a></li>
+            <li><a href="#grafik-kategori-rawan" class="quicknav-link active" aria-current="location">01. Kategori & Rawan</a></li>
+            <li><a href="#grafik-indikator" class="quicknav-link">02. 10 Indikator</a></li>
+            <li><a href="#grafik-jurusan" class="quicknav-link">03. Per Jurusan</a></li>
+            <li><a href="#tabel-data" class="quicknav-link">04. Tabel Data</a></li>
+            <li><a href="#wawasan-kritis" class="quicknav-link">05. Ringkasan</a></li>
           </ul>
         </div>
       </nav>
 
-      <!-- ================= 4. DATA VISUALIZATION SECTION ================= -->
       <section class="section data-charts-section">
         <div class="container">
-          <!-- UI State: Loading Indicator -->
           <div id="dataLoading" class="data-state-box loading-box" aria-live="polite">
-            <div class="spinner"></div>
-            <p>Memuat dan mengolah data kuesioner dari berkas JSON...</p>
+            <div class="spinner" aria-hidden="true"></div>
+            <p>Memuat data kuesioner dari berkas JSON...</p>
           </div>
 
-          <!-- UI State: Error Alert -->
           <div id="dataError" class="data-state-box error-box" style="display: none;" role="alert">
-            <h3>Terjadi Kendala Memuat Data</h3>
+            <h2>Kendala Memuat Data</h2>
             <p class="error-detail">Gagal membaca berkas JSON.</p>
-            <p>Silakan muat ulang peramban atau pastikan koneksi lokal berjalan dengan baik.</p>
+            <p>Muat ulang halaman atau pastikan berkas data lokal tersedia.</p>
           </div>
 
-          <!-- UI State: Data Content Container -->
           <div id="dataContent" style="display: none;">
-            <div class="section-header">
-              <span class="section-tag">Visualisasi Grafik</span>
-              <h2 class="section-title">Temuan Utama & Distribusi Perilaku</h2>
-              <p class="section-desc">
-                Grafik interaktif berikut membedah pola konsumsi energi siswa berdasarkan kategori umum,
-                perbandingan 10 indikator spesifik, serta variasi antarjurusan di sekolah.
-              </p>
+            <div class="section-head">
+              <span class="sticker-tag">4 Grafik Interaktif</span>
+              <h2 class="section-title">Temuan Utama Survei Kelas XI</h2>
             </div>
 
-            <!-- Charts Grid 1: Kategori & Peringatan Masalah -->
-            <div class="charts-dual-grid">
-              <!-- Grafik 1 -->
-              <article class="chart-card" id="grafik-kategori">
+            <div class="charts-dual-grid" id="grafik-kategori-rawan">
+              <article class="chart-card reveal" id="grafik-kategori">
                 <div class="chart-card-header">
                   <div class="chart-title-group">
                     <div class="chart-badge">Grafik 01</div>
-                    <h3>Distribusi Kategori Perilaku Siswa</h3>
+                    <h3>Sebaran Kategori Siswa</h3>
                   </div>
                 </div>
-                <div class="chart-canvas-wrapper" style="height: 280px;">
+                <div class="chart-canvas-wrapper" style="height: 270px;">
                   <canvas id="chartCategory" aria-label="Grafik distribusi kategori perilaku siswa" role="img"></canvas>
                 </div>
                 <div class="chart-explanation">
                   <p>
-                    Sebanyak 96.2% siswa kelas XI berada pada kategori Sangat Baik (59.4%) dan Baik (36.8%) dalam kebiasaan hemat energi.
-                    Hanya 3.8% siswa yang masih berada pada kategori Cukup dan Kurang, menandakan dasar pemahaman yang kuat di sekolah.
+                    <strong>96.2%</strong> siswa masuk kategori Sangat Baik dan
+                    Baik. Hanya <strong>3.8%</strong> di kategori Cukup dan
+                    Kurang.
                   </p>
                 </div>
               </article>
 
-              <!-- Grafik 2 -->
-              <article class="chart-card" id="grafik-rawan">
+              <article class="chart-card reveal" id="grafik-rawan">
                 <div class="chart-card-header">
                   <div class="chart-title-group">
                     <div class="chart-badge warning">Grafik 02</div>
-                    <h3>Titik Rawan: Persentase Respon 'Jarang/Tidak Pernah'</h3>
+                    <h3>Titik Rawan: Respon 'Jarang / Tidak Pernah'</h3>
                   </div>
                 </div>
-                <div class="chart-canvas-wrapper" style="height: 280px;">
+                <div class="chart-canvas-wrapper" style="height: 270px;">
                   <canvas id="chartConcern" aria-label="Grafik persentase perilaku yang masih jarang dilakukan" role="img"></canvas>
                 </div>
                 <div class="chart-explanation">
                   <p>
-                    Lebih dari 13% siswa mengaku masih jarang membatasi durasi gawai (13.7%) dan enggan menegur teman yang boros listrik (13.2%).
-                    Dua indikator ini merupakan titik kritis yang menjadi fokus utama pesan persuasif kampanye Sadar Watt.
+                    Tiga celah terbesar: batasi gawai (<strong>13.7%</strong>),
+                    transportasi hemat (<strong>13.4%</strong>), dan berani
+                    menegur teman (<strong>13.2%</strong>).
                   </p>
                 </div>
               </article>
             </div>
 
-            <!-- Chart Full Width 1: 10 Indikator Perilaku -->
-            <div class="chart-card full-width" id="grafik-indikator">
+            <div class="chart-card full-width reveal" id="grafik-indikator">
               <div class="chart-card-header">
                 <div class="chart-title-group">
                   <div class="chart-badge">Grafik 03</div>
                   <div>
-                    <h3>Rata-rata Skor 10 Indikator Perilaku Hemat Energi</h3>
-                    <p class="chart-subtitle">Evaluasi skor rata-rata tiap butir pernyataan (Skala Likert 1.00 - 4.00)</p>
+                    <h3>Skor 10 Indikator Perilaku (Skala 1 - 4)</h3>
+                    <p class="chart-subtitle">Bandingkan kebiasaan terkuat dan terlemah.</p>
                   </div>
                 </div>
                 <div class="chart-controls">
@@ -238,45 +223,46 @@
                   <button type="button" class="btn-chart-toggle" id="btnSortCode" aria-pressed="false">Urut P01-P10</button>
                 </div>
               </div>
-              <div class="chart-canvas-wrapper" style="height: 380px;">
+              <div class="chart-canvas-wrapper" style="height: 360px;">
                 <canvas id="chartIndicators" aria-label="Grafik skor rata-rata 10 indikator perilaku" role="img"></canvas>
               </div>
               <div class="chart-explanation">
                 <p>
-                  Aksi praktis langsung seperti mencabut steker (P06, skor 3.45) dan memastikan alat mati sebelum pulang (P10, skor 3.41) tergolong konsisten tinggi.
-                  Sebaliknya, kontrol durasi gawai (P04, skor 3.22) dan ketegasan sosial menegur rekan (P09, skor 3.22) mencatat rata-rata paling rendah.
+                  Tertinggi: praktik harian <strong>P01 (3.51)</strong> dan
+                  cabut steker <strong>P06 (3.45)</strong>. Terendah: kontrol
+                  gawai <strong>P04 (3.22)</strong> dan tegur teman
+                  <strong>P09 (3.22)</strong>.
                 </p>
               </div>
             </div>
 
-            <!-- Chart Full Width 2: Perbandingan Jurusan -->
-            <div class="chart-card full-width" id="grafik-jurusan">
+            <div class="chart-card full-width reveal" id="grafik-jurusan">
               <div class="chart-card-header">
                 <div class="chart-title-group">
                   <div class="chart-badge">Grafik 04</div>
                   <div>
-                    <h3>Perbandingan Rata-rata Skor Kesadaran per Konsentrasi Keahlian</h3>
-                    <p class="chart-subtitle">Rata-rata skor perilaku hemat energi di 7 jurusan kelas XI SMK Wikrama Bogor</p>
+                    <h3>Rata-rata Skor per Jurusan (7 Keahlian)</h3>
+                    <p class="chart-subtitle">Acuan rata-rata sekolah: 3.36.</p>
                   </div>
                 </div>
               </div>
-              <div class="chart-canvas-wrapper" style="height: 320px;">
+              <div class="chart-canvas-wrapper" style="height: 300px;">
                 <canvas id="chartJurusan" aria-label="Grafik perbandingan skor kesadaran energi antar jurusan" role="img"></canvas>
               </div>
               <div class="chart-explanation">
                 <p>
-                  Jurusan Pemasaran (PMN) meraih skor tertinggi sebesar 3.51, sedangkan jurusan dengan penggunaan laptop harian tertinggi seperti PPLG dan MPLB berada pada skor 3.24.
-                  Perbedaan ini membuktikan bahwa lingkungan laboratorium dan rutinitas digital berpengaruh langsung pada beban konsumsi listrik siswa.
+                  <strong>PMN (3.51)</strong> tertinggi, sementara jurusan
+                  intensif laptop <strong>PPLG & MPLB (3.24)</strong> paling
+                  perlu fokus penertiban lab.
                 </p>
               </div>
             </div>
 
-            <!-- ================= 5. DATA TABLE SECTION (ACCESSIBILITY & TRANSPARENCY) ================= -->
-            <div class="data-table-wrapper" id="tabel-data">
+            <div class="data-table-wrapper reveal" id="tabel-data">
               <div class="data-table-header">
                 <div>
-                  <h3>Matriks Rinci 10 Butir Pernyataan Angket</h3>
-                  <p>Tabel referensi data mentah teragregasi untuk keperluan transparansi audit analisis.</p>
+                  <h3>Matriks 10 Butir Angket</h3>
+                  <p>Cari kode P01 sampai P10 atau saring berdasarkan kategori skor.</p>
                 </div>
                 <div class="table-legend">
                   <span class="legend-badge badge-excellent">Sangat Baik (&ge; 3.26)</span>
@@ -284,19 +270,20 @@
                 </div>
               </div>
 
-              <!-- Interactive Search & Filter Controls -->
               <div class="table-controls">
-                <input
-                  type="text"
-                  id="tableSearchInput"
-                  class="table-search-input"
-                  placeholder="Cari indikator, kata kunci, atau kode (P01-P10)..."
-                  aria-label="Cari butir kuesioner"
-                />
+                <div class="table-search-group">
+                  <label for="tableSearchInput" class="table-search-label">Cari indikator</label>
+                  <input
+                    type="text"
+                    id="tableSearchInput"
+                    class="table-search-input"
+                    placeholder="Kata kunci atau kode (P01-P10)..."
+                  />
+                </div>
                 <div class="table-filter-pills" role="group" aria-label="Filter kategori tabel">
                   <button type="button" class="filter-pill active" data-filter="all">Semua (10)</button>
-                  <button type="button" class="filter-pill" data-filter="excellent">Sangat Baik (7)</button>
-                  <button type="button" class="filter-pill" data-filter="attention">Perlu Perhatian (3)</button>
+                  <button type="button" class="filter-pill" data-filter="excellent">Sangat Baik (8)</button>
+                  <button type="button" class="filter-pill" data-filter="attention">Perlu Perhatian (2)</button>
                 </div>
               </div>
 
@@ -305,103 +292,76 @@
                   <thead>
                     <tr>
                       <th scope="col" style="width: 80px;">Kode</th>
-                      <th scope="col">Indikator & Pernyataan Kuesioner</th>
-                      <th scope="col" style="width: 130px;">Skor Rerata</th>
-                      <th scope="col" style="width: 140px;">Respon Sering</th>
+                      <th scope="col">Indikator & Pernyataan</th>
+                      <th scope="col" style="width: 120px;">Skor</th>
+                      <th scope="col" style="width: 130px;">Respon Sering</th>
                       <th scope="col" style="width: 130px;">Kategori</th>
                     </tr>
                   </thead>
-                  <tbody id="dataTableBody">
-                    <!-- Baris tabel diisi otomatis oleh JavaScript -->
-                  </tbody>
+                  <tbody id="dataTableBody"></tbody>
                 </table>
               </div>
             </div>
 
-            <!-- Comparative Evidence Insights -->
-            <div class="insights-comparison-grid" id="wawasan-kritis">
+            <div class="insights-comparison-grid reveal" id="wawasan-kritis">
               <div class="insight-box strength">
                 <div class="insight-box-header">
-                  <span class="insight-tag tag-strength">Kekuatan Terbukti</span>
-                  <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-forest);">Skor &gt; 3.40</span>
+                  <span class="insight-tag tag-strength">Sudah Kuat</span>
+                  <span style="font-size: 0.84rem; font-weight: 800;">Skor &gt; 3.40</span>
                 </div>
-                <h3>Modal Perilaku Dasar Sudah Sangat Solid</h3>
+                <h3>Modal Kebiasaan Baik</h3>
                 <ul>
-                  <li><strong>Mencabut Steker (P06 - skor 3.45):</strong> 96.7% siswa terbiasa mencabut charger setelah baterai penuh.</li>
-                  <li><strong>Mematikan Alat Sebelum Pulang (P10 - skor 3.41):</strong> Kesadaran merapikan fasilitas di akhir jam produktif sudah terbentuk.</li>
-                  <li><strong>Praktik Hemat Harian (P01 - skor 3.51):</strong> Skor tertinggi angket, membuktikan nilai Adiwiyata telah terinternalisasi secara mandiri.</li>
+                  <li><strong>P01 (3.51):</strong> 98.6% sadar hemat energi harian.</li>
+                  <li><strong>P06 (3.45):</strong> 92.0% terbiasa cabut charger selesai pakai.</li>
+                  <li><strong>P10 (3.41):</strong> 91.7% cek alat mati sebelum pulang.</li>
                 </ul>
               </div>
 
               <div class="insight-box challenge">
                 <div class="insight-box-header">
-                  <span class="insight-tag tag-challenge">Titik Kritis Sasaran</span>
-                  <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-amber-dark);">Tantangan Utama</span>
+                  <span class="insight-tag tag-challenge">Perlu Aksi</span>
+                  <span style="font-size: 0.84rem; font-weight: 800;">Fokus Fase 3</span>
                 </div>
-                <h3>Area yang Membutuhkan Intervensi Kampanye</h3>
+                <h3>Titik Rawan yang Kita Perbaiki</h3>
                 <ul>
-                  <li><strong>Kontrol Durasi Gawai (P04 - skor 3.22):</strong> 13.7% siswa mengaku masih jarang membatasi durasi pemakaian perangkat pribadi.</li>
-                  <li><strong>Keberanian Menegur Teman (P09 - skor 3.22):</strong> 13.2% siswa merasa segan atau canggung mengingatkan rekan yang membiarkan sakelar listrik menyala.</li>
-                  <li><strong>Kesenjangan Jurusan Lab Komputer:</strong> Jurusan intensif IT seperti PPLG (skor 3.24) memerlukan pesan edukasi spesifik agar stopkontak lab ditertibkan.</li>
+                  <li><strong>P04 (3.22):</strong> 13.7% jarang membatasi laptop & gawai.</li>
+                  <li><strong>P09 (3.22):</strong> 13.2% masih sungkan menegur teman.</li>
+                  <li><strong>PPLG & MPLB (3.24):</strong> butuh disiplin sakelar lab.</li>
                 </ul>
               </div>
             </div>
-
-            <!-- Action Note -->
-            <div class="data-takeaway-box">
-              <div class="takeaway-tag">Kesimpulan Berbasis Data</div>
-              <h3>Tantangan Bukan pada "Tahu", tapi pada "Tindakan Bersama"</h3>
-              <p>
-                Hasil analisis menunjukkan bahwa siswa secara individu sudah sangat memahami pentingnya mematikan sakelar dan mencabut colokan listrik.
-                Tantangan terbesar kita terletak pada kebiasaan pasif saat berada di ruang lab komputer bersama dan keengganan menegur teman yang meninggalkan perangkat menyala.
-                Inilah alasan Sadar Watt hadir dengan pesan kampanye yang santai, lugas, dan solutif.
-              </p>
-              <div class="takeaway-actions">
-                <a href="index.html#latar-belakang" class="btn btn-primary">Lihat Solusi Kampanye</a>
-                <a href="tentang.html" class="btn btn-secondary">Pelajari Latar Belakang</a>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
 
-      <!-- ================= 6. IDENTITAS TIM PENYUSUN ================= -->
-      <section class="section" style="padding-top: 0">
+      <section class="section section-sunny reveal">
         <div class="container">
           <div class="identity-box">
             <div class="identity-header">
-              <div>
-                <h3>Identitas Inisiator Kampanye</h3>
-              </div>
+              <h2>Tim Inisiator Sadar Watt</h2>
               <span class="identity-meta-tag"
-                >SMK Wikrama Bogor • Jurusan PPLG • Kelas XI</span
+                >SMK Wikrama Bogor • XI PPLG-3</span
               >
             </div>
 
             <div class="identity-grid">
               <div class="identity-col">
-                <h4>Tim / Kelompok Penyusun</h4>
-               
+                <h3>Penyusun</h3>
                 <span class="placeholder-highlight">
                   Daniyal, Manu, Nara Andra Tyaga
                 </span>
               </div>
 
               <div class="identity-col">
-                <h4>Kelas & Kejuruan</h4>
+                <h3>Kejuruan</h3>
                 <p>Kelas XI PPLG-3</p>
-                <p style="font-size: 0.85rem; color: var(--color-ink-muted)">
-                  Pengembangan Perangkat Lunak dan Gim
-                </p>
+                <p class="meta-sub">Pengembangan Perangkat Lunak dan Gim</p>
               </div>
 
               <div class="identity-col">
-                <h4>Fase Proyek</h4>
-                <p>Fase 2: Data & Fakta</p>
-                <p style="font-size: 0.85rem; color: var(--color-ink-muted)">
-                  Penyusunan Data JSON & Visualisasi Chart.js
-                </p>
+                <h3>Progres Proyek</h3>
+                <p>Fase 3: Aksi & Rekomendasi</p>
+                <p class="meta-sub">Alur Lengkap: Beranda, Data, Aksi</p>
               </div>
             </div>
           </div>
@@ -409,29 +369,50 @@
       </section>
     </main>
 
-    <!-- ================= 7. FOOTER ================= -->
     <footer class="site-footer">
+      <div class="footer-tape-wrap" aria-hidden="true">
+        <div class="footer-tape">
+          <span>CABUT CHARGER</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>MATIKAN KIPAS</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>BUKA JENDELA</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>SAKELAR OFF</span>
+          <span class="zine-ribbon-sep"></span>
+          <span>SADAR WATT</span>
+        </div>
+      </div>
+
       <div class="container">
         <div class="footer-top">
           <div class="footer-brand">
-            <h3>Sadar<span>Watt</span>.</h3>
+            <h3>Sadar<span>Watt.</span></h3>
             <p>
-              Gerakan independen konservasi energi yang diinisiasi oleh siswa
-              kelas PPLG-3. Bertujuan menciptakan budaya hemat listrik yang
-              nyata, terukur, dan berkelanjutan di lingkungan sekolah.
+              Kampanye hemat listrik siswa XI PPLG-3 untuk ruang kelas dan lab
+              yang peduli energi di SMK Wikrama Bogor.
             </p>
+            <div class="footer-eco-chips">
+              <span class="footer-eco-chip">Sekolah Adiwiyata</span>
+              <span class="footer-eco-chip yellow">0 AC</span>
+              <span class="footer-eco-chip">636 Responden</span>
+            </div>
           </div>
 
           <div class="footer-nav">
-            <h4>Navigasi Halaman</h4>
-            <ul>
-              <li><a href="index.html">Beranda</a></li>
-              <li><a href="tentang.html">Cerita di Balik Kampanye</a></li>
-              <li><a href="data.html">Data & Fakta</a></li>
+            <h4>Jelajahi Halaman</h4>
+            <ul class="footer-nav-grid">
               <li>
-                <span style="color: #6b7f74; font-size: 0.9rem"
-                  >Panduan Aksi (Fase 3)
-                </span>
+                <a href="index.html" class="footer-nav-btn">Beranda</a>
+              </li>
+              <li>
+                <a href="tentang.html" class="footer-nav-btn">Tentang</a>
+              </li>
+              <li>
+                <a href="data.html" class="footer-nav-btn current" aria-current="page">Data & Fakta</a>
+              </li>
+              <li>
+                <a href="aksi.html" class="footer-nav-btn">Aksi & Rekomendasi</a>
               </li>
             </ul>
           </div>
@@ -439,17 +420,18 @@
 
         <div class="footer-bottom">
           <p>© 2026 Kampanye Sadar Watt - Kelas PPLG XI-3 SMK Wikrama Bogor.</p>
+          <button type="button" class="btn-back-top" id="btnBackToTop">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            <span>Kembali ke Atas</span>
+          </button>
         </div>
       </div>
     </footer>
 
-    <!-- Chart.js via CDN (jsDelivr, tanpa instalasi lokal) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-
-    <!-- Fallback Objek Data Lokal (Mendukung pembukaan file:// tanpa error CORS) -->
     <script src="data-perilaku-energi.js"></script>
-
-    <!-- Script Visualisasi & Interaksi -->
     <script src="js/data-charts.js"></script>
     <script src="js/main.js"></script>
   </body>
